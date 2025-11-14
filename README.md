@@ -42,7 +42,7 @@ The filter seamlessly integrates into GA4's table controls:
 
 ### Option 2: Manual Installation
 
-1. **Download** the [latest release](https://github.com/yourusername/ga4-adv-path-filter/releases)
+1. **Download** the [latest release](https://github.com/feliceit/ga4-adv-path-filter/releases)
 2. **Extract** the ZIP file to a folder
 3. **Open Chrome** and navigate to `chrome://extensions/`
 4. **Enable** "Developer mode" (toggle in top-right corner)
@@ -83,7 +83,7 @@ ga4-adv-path-filter/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ga4-adv-path-filter.git
+git clone https://github.com/feliceit/ga4-adv-path-filter.git
 cd ga4-adv-path-filter
 
 # Load in Chrome
@@ -157,9 +157,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Support
 
-- 🐛 [Report bugs](https://github.com/yourusername/ga4-adv-path-filter/issues)
-- 💬 [Ask questions](https://github.com/yourusername/ga4-adv-path-filter/discussions)
-- ⭐ [Star the repo](https://github.com/yourusername/ga4-adv-path-filter) to show support!
+- 🐛 [Report bugs](https://github.com/feliceit/ga4-adv-path-filter/issues)
+- 💬 [Ask questions](https://github.com/feliceit/ga4-adv-path-filter/discussions)
+- ⭐ [Star the repo](https://github.com/feliceit/ga4-adv-path-filter) to show support!
 
 ## 🗺️ Roadmap
 
@@ -170,7 +170,7 @@ Future enhancements being considered:
 - [ ] Custom column filtering
 - [ ] Keyboard navigation
 
-Vote for features or suggest new ones in [Discussions](https://github.com/yourusername/ga4-adv-path-filter/discussions)!
+Vote for features or suggest new ones in [Discussions](https://github.com/feliceit/ga4-adv-path-filter/discussions)!
 
 ---
 
