@@ -1,4 +1,4 @@
-# GA4 Advanced Path Filter
+# GA4 Adv Path Filter
 
 > A lightweight Chrome extension that adds real-time filtering to Google Analytics 4 Conversion Paths tables.
 
