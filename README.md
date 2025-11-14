@@ -1,116 +1,183 @@
-# GA4 Table Filter - Estensione Chrome
+# GA4 Advanced Path Filter
 
-Estensione Chrome che aggiunge un filtro di ricerca personalizzato alle tabelle dei percorsi di conversione in Google Analytics 4.
+> A lightweight Chrome extension that adds real-time filtering to Google Analytics 4 Conversion Paths tables.
 
-## 🚀 Caratteristiche
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/badge/version-1.0.0-orange.svg)](https://github.com/yourusername/ga4-adv-path-filter/releases)
 
-- **Filtro in tempo reale**: Cerca e filtra le righe mentre digiti
-- **Contatore dinamico**: Visualizza quante righe corrispondono al filtro
-- **Pulsante cancella**: Pulisci rapidamente il campo di ricerca
-- **Tasto ESC**: Cancella il filtro e esci dal campo
-- **Design Material**: Si integra perfettamente con l'interfaccia di GA4
-- **Auto-detect**: Attivazione automatica sulla pagina corretta
+## 🎯 Overview
 
-## 📦 Installazione
+**GA4 Advanced Path Filter** enhances your Google Analytics 4 workflow by adding a powerful, real-time search filter to Conversion Paths (Key Event Paths) tables. Find the data you need instantly without scrolling through pages of results.
 
-### Metodo 1: Da file non pacchettizzato (Sviluppo)
+Perfect for marketing analysts, data professionals, and anyone who works with GA4 conversion data regularly.
 
-1. Scarica e estrai il file `ga4-table-filter.zip`
-2. Apri Chrome e vai su `chrome://extensions/`
-3. Attiva la **Modalità sviluppatore** (toggle in alto a destra)
-4. Clicca su **Carica estensione non pacchettizzata**
-5. Seleziona la cartella estratta `ga4-table-filter`
-6. L'estensione è ora installata! 🎉
+## ✨ Features
 
-### Metodo 2: Installazione permanente
+- 🔍 **Real-time search** - Filter rows as you type
+- 📊 **Dynamic counter** - See matching results instantly  
+- ❌ **Quick clear** - One-click button to reset filter
+- ⌨️ **Keyboard shortcuts** - Press ESC to clear
+- 🎨 **Material Design** - Seamlessly integrated with GA4's interface
+- 🚀 **Lightweight** - No dependencies, instant loading
+- 🔒 **Privacy-first** - No data collection, works entirely offline
 
-1. Vai su `chrome://extensions/`
-2. Dopo aver caricato l'estensione non pacchettizzata, clicca su **Pacchettizza estensione**
-3. Seleziona la cartella dell'estensione
-4. Chrome creerà un file `.crx` che puoi installare in modo permanente
+## 📸 Screenshots
 
-## 🎯 Come usare
-
-1. Vai su Google Analytics 4
-2. Naviga su **Pubblicità** → **Percorsi eventi chiave** (o **Percorsi di conversione**)
-3. Il filtro apparirà automaticamente nella barra dei controlli della tabella
-4. Digita nel campo per filtrare le righe in tempo reale
-5. Usa il pulsante **×** per cancellare il filtro
-6. Premi **ESC** per pulire e uscire dal campo
-
-## 📂 Struttura file
-
+### Filter in Action
 ```
-ga4-table-filter/
-├── manifest.json          # Configurazione estensione
-├── content.js            # Script principale
-├── popup.html            # Interfaccia popup
-├── README.md             # Questo file
-└── icons/
-    ├── icon16.png        # Icona 16x16
-    ├── icon48.png        # Icona 48x48
-    └── icon128.png       # Icona 128x128
+┌─────────────────────────────────────────────────┐
+│ Filter rows: [google__] [×]  3 of 10 rows      │
+└─────────────────────────────────────────────────┘
 ```
 
-## 🔧 Funzionamento tecnico
+The filter seamlessly integrates into GA4's table controls:
+- Matches the native Material Design
+- Appears automatically on Conversion Paths pages
+- Works with GA4's existing pagination
 
-L'estensione:
-1. Monitora l'URL per rilevare la pagina dei percorsi di conversione
-2. Cerca gli elementi DOM caratteristici (`ga-conversion-path-chips`)
-3. Inietta il filtro nel container `.left-table-controls`
-4. Filtra le righe della tabella in tempo reale
-5. Gestisce i cambiamenti di URL (SPA - Single Page Application)
+## 🚀 Installation
 
-## 🛠️ Personalizzazione
+### Option 1: Chrome Web Store (Recommended - Coming Soon)
+*Extension is pending review on Chrome Web Store*
 
-Puoi modificare il comportamento editando `content.js`:
+### Option 2: Manual Installation
 
-```javascript
-const CONFIG = {
-  checkInterval: 1000,     // Frequenza controllo (ms)
-  maxAttempts: 30,        // Tentativi massimi
-  // ... altri selettori
-};
+1. **Download** the [latest release](https://github.com/yourusername/ga4-adv-path-filter/releases)
+2. **Extract** the ZIP file to a folder
+3. **Open Chrome** and navigate to `chrome://extensions/`
+4. **Enable** "Developer mode" (toggle in top-right corner)
+5. Click **"Load unpacked"**
+6. **Select** the extracted folder
+7. Done! 🎉
+
+## 📖 Usage
+
+1. Navigate to **Google Analytics 4**
+2. Go to **Advertising** → **Key Event Paths** (or **Conversion Paths**)
+3. The filter will appear automatically in the table controls
+4. Type to search - results update in real-time
+5. Click **×** to clear or press **ESC**
+
+### Tips
+- Search works across all visible columns
+- Case-insensitive matching
+- Filters current page only (use GA4 pagination for more rows)
+- Results counter shows `X of Y` format
+
+## 🛠️ For Developers
+
+### Project Structure
+```
+ga4-adv-path-filter/
+├── manifest.json          # Extension configuration
+├── content.js            # Main script
+├── popup.html            # Extension popup
+├── icons/                # Extension icons
+│   ├── icon16.png
+│   ├── icon48.png
+│   └── icon128.png
+└── README.md
 ```
 
-## 🐛 Risoluzione problemi
+### Local Development
 
-**Il filtro non appare?**
-- Verifica di essere sulla pagina corretta (Percorsi eventi chiave)
-- Apri la console (F12) e cerca messaggi `[GA4 Filter]`
-- Ricarica la pagina
-- Controlla che l'estensione sia attiva in `chrome://extensions/`
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/ga4-adv-path-filter.git
+cd ga4-adv-path-filter
 
-**Il filtro scompare cambiando pagina?**
-- Normale! L'estensione rileva automaticamente i cambiamenti URL e lo reinstalla
+# Load in Chrome
+# 1. Open chrome://extensions/
+# 2. Enable Developer Mode
+# 3. Click "Load unpacked"
+# 4. Select the project directory
+```
 
-**Errori nella console?**
-- Segnala il problema con i dettagli dell'errore
+### Technology Stack
+- **Manifest V3** - Latest Chrome extension standard
+- **Vanilla JavaScript** - No dependencies
+- **Material Design** - Google's design system
+- **DOM Manipulation** - Efficient table filtering
 
-## 📝 Note
+## 🤝 Contributing
 
-- L'estensione funziona solo su `analytics.google.com`
-- Compatibile con tutti gli account GA4
-- Non raccoglie né memorizza dati
-- Permessi minimi richiesti
+Contributions are welcome! Please check out our [Contributing Guidelines](CONTRIBUTING.md).
 
-## 🔄 Versioni
+### Ways to Contribute
+- 🐛 Report bugs
+- 💡 Suggest features
+- 📖 Improve documentation
+- 🔧 Submit pull requests
 
-### v1.0.0 (2024)
-- Rilascio iniziale
-- Filtro ricerca base
-- Contatore risultati
-- Pulsante cancella
-- Auto-detect pagina
+## 🐛 Troubleshooting
 
-## 👨‍💻 Sviluppo
+### Filter doesn't appear
+- Verify you're on the **Key Event Paths** page
+- Check the URL contains `key-event-paths` or `conversion-paths`
+- Reload the page
+- Ensure extension is enabled at `chrome://extensions/`
 
-Creato per migliorare l'esperienza utente nell'analisi dei percorsi di conversione in GA4.
+### Filter not working properly
+- Open DevTools Console (F12)
+- Look for `[GA4 Filter]` messages
+- Check for JavaScript errors
+- Try disabling other extensions
 
-## 📄 Licenza
+### Extension doesn't activate
+- Confirm you're on `analytics.google.com`
+- Check that you have access to the Conversion Paths report
+- Verify the extension has permissions for `analytics.google.com`
 
-Uso personale e aziendale libero.
+## 🔒 Privacy & Security
+
+This extension:
+- ✅ Only runs on `analytics.google.com`
+- ✅ No data collection or transmission
+- ✅ No external connections
+- ✅ Works entirely within your browser
+- ✅ Open source - fully transparent
+- ✅ Minimal permissions required
+
+## 📊 Browser Support
+
+- ✅ Chrome 88+
+- ✅ Edge 88+ (Chromium-based)
+- ⚠️ Other Chromium browsers (untested but should work)
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Google Analytics team for GA4
+- Chrome Extensions team for excellent documentation
+- Material Design for the design system
+- The open-source community
+
+## 📧 Support
+
+- 🐛 [Report bugs](https://github.com/yourusername/ga4-adv-path-filter/issues)
+- 💬 [Ask questions](https://github.com/yourusername/ga4-adv-path-filter/discussions)
+- ⭐ [Star the repo](https://github.com/yourusername/ga4-adv-path-filter) to show support!
+
+## 🗺️ Roadmap
+
+Future enhancements being considered:
+- [ ] Filter history/favorites
+- [ ] Advanced regex support
+- [ ] Export filtered results
+- [ ] Custom column filtering
+- [ ] Keyboard navigation
+
+Vote for features or suggest new ones in [Discussions](https://github.com/yourusername/ga4-adv-path-filter/discussions)!
 
 ---
 
-💡 **Suggerimenti?** Apri una issue o contatta lo sviluppatore!
+<div align="center">
+
+**[⬆ back to top](#ga4-advanced-path-filter)**
+
+Made with ❤️ for the GA4 community
+
+</div>

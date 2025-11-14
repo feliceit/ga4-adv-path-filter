@@ -70,7 +70,7 @@
 
     // Crea il label
     const filterLabel = document.createElement('label');
-    filterLabel.textContent = 'Filtra righe:';
+    filterLabel.textContent = 'Filter rows:';
     filterLabel.style.cssText = `
       font-family: 'Google Sans', Roboto, Arial, sans-serif;
       font-size: 14px;
@@ -83,7 +83,7 @@
     // Crea il campo di input
     const filterInput = document.createElement('input');
     filterInput.type = 'text';
-    filterInput.placeholder = 'Cerca per parola chiave...';
+    filterInput.placeholder = 'Search...';
     filterInput.style.cssText = `
       padding: 0 12px;
       height: 36px;
@@ -127,7 +127,7 @@
         <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
       </svg>
     `;
-    clearButton.title = 'Cancella filtro';
+    clearButton.title = 'Clear filter';
     clearButton.style.cssText = `
       padding: 0;
       width: 36px;
@@ -186,11 +186,11 @@
 
       const totalRows = rows.length;
       if (filterValue === '') {
-        resultCounter.textContent = `${totalRows} righe`;
+        resultCounter.textContent = `${totalRows} rows`;
         resultCounter.style.color = '#5f6368';
         resultCounter.style.fontWeight = '400';
       } else {
-        resultCounter.textContent = `${visibleCount} di ${totalRows}`;
+        resultCounter.textContent = `${visibleCount} of ${totalRows}`;
         if (visibleCount > 0) {
           resultCounter.style.color = '#1967d2';
           resultCounter.style.fontWeight = '500';
@@ -222,11 +222,11 @@
 
     // Inizializza il contatore
     const totalRows = tbody.querySelectorAll(CONFIG.selectors.rows).length;
-    resultCounter.textContent = `${totalRows} righe`;
+    resultCounter.textContent = `${totalRows} rows`;
 
     filterInstalled = true;
-    console.log('[GA4 Filter] ✅ Filtro installato con successo!');
-    console.log(`[GA4 Filter] 📊 Totale righe: ${totalRows}`);
+    console.log('[GA4 Filter] ✅ Filter installed successfully!');
+    console.log(`[GA4 Filter] 📊 Current page rows: ${totalRows}`);
 
     return true;
   }
@@ -246,7 +246,7 @@
 
     // Se abbiamo superato i tentativi massimi, ferma
     if (attempts >= CONFIG.maxAttempts) {
-      console.log('[GA4 Filter] ⏱️ Tentativi massimi raggiunti');
+      console.log('[GA4 Filter] ⏱️ Maximum attempts reached');
       if (checkIntervalId) {
         clearInterval(checkIntervalId);
         checkIntervalId = null;
@@ -275,7 +275,7 @@
     const currentUrl = location.href;
     if (currentUrl !== lastUrl) {
       lastUrl = currentUrl;
-      console.log('[GA4 Filter] 🔄 Cambio URL rilevato');
+      console.log('[GA4 Filter] 🔄 URL change detected');
       init();
     }
   }).observe(document, { subtree: true, childList: true });

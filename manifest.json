@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "GA4 Table Filter",
+  "name": "GA4 Advanced Path Filter",
   "version": "1.0.0",
-  "description": "Aggiunge un filtro personalizzato alle tabelle dei percorsi di conversione in Google Analytics 4",
+  "description": "Add a powerful real-time filter to Google Analytics 4 Conversion Paths tables for instant data search and analysis.",
   "permissions": [],
   "host_permissions": [
     "https://analytics.google.com/*"
